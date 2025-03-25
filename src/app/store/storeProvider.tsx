@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useSelector, useDispatch, TypedUseSelectorHook } from 'react-redux';
-import githubUserReducer from './profileProvider';
+import githubUserReducer from '@/app/store/profileProvider';
 
 export const store = configureStore({
     reducer: {
-        githubUser: githubUserReducer
+        githubUser: githubUserReducer,
     }
 });
 

@@ -1,4 +1,4 @@
-interface GitHubUser {
+export interface GitHubUser {
     login: string;
     name: string | null;
     avatar_url: string;
@@ -13,8 +13,26 @@ interface GitHubUser {
     created_at: string;
 }
 
-interface GitHubUserState {
+export interface GitHubReadme {
+    content: string;
+    encoding: string;
+    html_url: string;
+}
+
+export interface GitHubRepository {
+    name: string;
+    description: string | null;
+    html_url: string;
+    stargazers_count: number;
+    language: string | null;
+    updated_at: string;
+    readme: GitHubReadme | null;
+}
+
+export interface GitHubUserState {
     data: GitHubUser | null;
+    repositories: GitHubRepository[];
     isLoading: boolean;
     error: string | null;
+    expandedReadmes: { [key: string]: boolean };
 }
